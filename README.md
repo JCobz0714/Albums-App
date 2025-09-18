@@ -2,6 +2,8 @@
 
 This will be my first API project for practice, using Springboot Framework, might be adding some front-end to it later on, meanwhile this will be a back-end project only :)
 
+The purpose of this project is to create a basic CRUD API application to search, add, update and delete albums and genres.
+
 # Tools used:
 
 - ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
