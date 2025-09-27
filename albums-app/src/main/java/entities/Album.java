@@ -8,8 +8,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 
 //Creating the 'Album' entity
 @Entity
@@ -26,6 +29,12 @@ public class Album {
     //Creating the many to many relationship between the entities.
     //Album will be the father entity.
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    //Customizing the table generated between the entities
+    @JoinTable(
+        name = "tbl_albums_genre", 
+        joinColumns = @JoinColumn(name = "album_id"), 
+        inverseJoinColumns = @JoinColumn(name = "genre_id"), 
+        uniqueConstraints = @UniqueConstraint(columnNames = {"album_id", "curso_id"}))
     private List<Genre> genres;
 
     //Initializing the genres list to ease synchronization between the entities
