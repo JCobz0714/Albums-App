@@ -1,5 +1,6 @@
 package entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.Column;
@@ -26,6 +27,17 @@ public class Genre {
     //Creating the many to many relationship between the entities.
     @ManyToMany(mappedBy = "albums")
     private List<Album> albums;
+
+    //Initializing the albums list to ease synchronization between the entities
+    public Genre() {
+        this.albums = new ArrayList<>();
+    }
+
+    public Genre(String genreName) {
+        //Calling the empty constructor to initialize the albums list
+        this();
+        this.genreName = genreName;
+    }
 
     public Long getId() {
         return id;
