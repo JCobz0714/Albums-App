@@ -10,9 +10,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import Utils.ValidationUtil;
-import entities.Album;
-import services.AlbumService;
+import com.jacobo.springboot.albums_app.albums_app.entities.Album;
+import com.jacobo.springboot.albums_app.albums_app.services.AlbumService;
+import com.jacobo.springboot.albums_app.albums_app.utils.ValidationUtil;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;

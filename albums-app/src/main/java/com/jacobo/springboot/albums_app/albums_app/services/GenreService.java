@@ -1,9 +1,9 @@
-package services;
+package com.jacobo.springboot.albums_app.albums_app.services;
 
 import java.util.List;
 import java.util.Optional;
 
-import entities.Genre;
+import com.jacobo.springboot.albums_app.albums_app.entities.Genre;
 
 public interface GenreService {
     //Get all the genres

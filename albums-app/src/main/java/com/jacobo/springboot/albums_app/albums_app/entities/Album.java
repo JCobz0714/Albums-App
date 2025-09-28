@@ -1,4 +1,4 @@
-package entities;
+package com.jacobo.springboot.albums_app.albums_app.entities;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +15,7 @@ import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
 //Creating the 'Album' entity
 @Entity
@@ -30,7 +31,7 @@ public class Album {
     @NotBlank
     private String artist;
 
-    @NotEmpty
+    @NotNull
     private Long year;
 
     //Creating the many to many relationship between the entities.

@@ -1,4 +1,4 @@
-package services;
+package com.jacobo.springboot.albums_app.albums_app.services;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import entities.Genre;
-import repositories.GenreRepository;
+import com.jacobo.springboot.albums_app.albums_app.entities.Genre;
+import com.jacobo.springboot.albums_app.albums_app.repositories.GenreRepository;
 
 //Using the service interface methods
 @Service

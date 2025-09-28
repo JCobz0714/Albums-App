@@ -1,4 +1,4 @@
-package Utils;
+package com.jacobo.springboot.albums_app.albums_app.utils;
 
 import java.util.HashMap;
 import java.util.Map;

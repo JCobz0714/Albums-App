@@ -1,11 +1,11 @@
-package repositories;
+package com.jacobo.springboot.albums_app.albums_app.repositories;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
-import entities.Album;
+import com.jacobo.springboot.albums_app.albums_app.entities.Album;
 
 public interface AlbumRepository extends CrudRepository<Album, Long> {
     //Making the search for an album by its genre using a query

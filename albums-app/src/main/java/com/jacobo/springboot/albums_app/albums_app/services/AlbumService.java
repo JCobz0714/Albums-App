@@ -1,9 +1,9 @@
-package services;
+package com.jacobo.springboot.albums_app.albums_app.services;
 
 import java.util.List;
 import java.util.Optional;
 
-import entities.Album;
+import com.jacobo.springboot.albums_app.albums_app.entities.Album;
 
 public interface AlbumService {
     //Get all the albums

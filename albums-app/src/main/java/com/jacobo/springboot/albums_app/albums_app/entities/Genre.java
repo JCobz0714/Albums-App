@@ -1,7 +1,9 @@
-package entities;
+package com.jacobo.springboot.albums_app.albums_app.entities;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -27,7 +29,9 @@ public class Genre {
     private String genreName;
 
     //Creating the many to many relationship between the entities.
-    @ManyToMany(mappedBy = "albums")
+    @ManyToMany(mappedBy = "genres")
+    //Annotation JsonIgnore to avoid loops in the JSON file
+    @JsonIgnore
     private List<Album> albums;
 
     //Initializing the albums list to ease synchronization between the entities
