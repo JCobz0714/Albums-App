@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import entities.Album;
 import entities.Genre;
 import repositories.GenreRepository;
 
@@ -19,24 +18,28 @@ public class GenreServiceImpl implements GenreService {
     @Autowired
     private GenreRepository repository;
 
+    //Method that returns all genres
     @Transactional(readOnly = true)
     @Override
     public List<Genre> findAll() {
         return (List<Genre>) repository.findAll();
     }
 
+    //Finding one album by its ID
     @Transactional(readOnly = true)
     @Override
     public Optional<Genre> findById(Long id) {
         return repository.findById(id);
     }
 
+    //Persisting the data in the DB using the injected repository object
     @Transactional
     @Override
     public Genre save(Genre genre) {
         return repository.save(genre);
     }
 
+    //Updating a genre in the DB
     @Transactional
     @Override
     public Optional<Genre> update(Long id, Genre genre) {
@@ -54,6 +57,7 @@ public class GenreServiceImpl implements GenreService {
         return genreOptional;
     }
 
+    //Deleting a genre from the DB
     @Transactional
     @Override
     public Optional<Genre> delete(Long id) {

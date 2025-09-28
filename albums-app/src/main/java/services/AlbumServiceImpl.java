@@ -25,24 +25,28 @@ public class AlbumServiceImpl implements AlbumService {
         return (List<Album>) repository.findAll();
     }
 
+    //Finding one album by its ID
     @Transactional(readOnly = true)
     @Override
     public Optional<Album> findById(Long id) {
         return repository.findById(id);
     }
 
+    //Finding albums using the genre
     @Transactional(readOnly = true)
     @Override
     public List<Album> findAlbumsByGenre(String genre) {
         return repository.findAlbumByGenre(genre);
     }
 
+    //Persisting the data in the DB using the injected repository object
     @Transactional
     @Override
     public Album save(Album album) {
         return repository.save(album);
     }
     
+    //Updating a genre in the DB
     @Transactional
     @Override
     public Optional<Album> update(Long id, Album album) {
@@ -62,6 +66,7 @@ public class AlbumServiceImpl implements AlbumService {
         return albumOptional;
     }
 
+    //Deleting an album from the DB
     @Transactional
     @Override
     public Optional<Album> delete(Long id) {
