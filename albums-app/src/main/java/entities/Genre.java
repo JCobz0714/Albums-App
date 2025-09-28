@@ -10,6 +10,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 
 //Creating the 'Genre' entity
 @Entity
@@ -20,6 +21,7 @@ public class Genre {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank
     //Changing the name of "genreName" atribute to avoid conflicts with MySQL
     @Column(name = "genre_name")
     private String genreName;

@@ -13,6 +13,8 @@ import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 
 //Creating the 'Album' entity
 @Entity
@@ -22,8 +24,13 @@ public class Album {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank
     private String name;
+
+    @NotBlank
     private String artist;
+
+    @NotEmpty
     private Long year;
 
     //Creating the many to many relationship between the entities.
