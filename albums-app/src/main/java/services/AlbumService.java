@@ -13,11 +13,14 @@ public interface AlbumService {
     Optional<Album> findById(Long id);
 
     //Find an album regarding its genre
-    Optional<Album> findAlbumsByGenre(String genre);
+    List<Album> findAlbumsByGenre(String genre);
 
     //Persisting the new album in the DB
     Album save (Album album);
 
+    //Updating an album in the DB
+    Optional<Album> update(Long id, Album album);
+
     //Deleting an album
-    void delete (Album album);
+    Optional<Album> delete (Long id);
 }

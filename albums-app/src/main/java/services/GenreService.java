@@ -15,6 +15,9 @@ public interface GenreService {
     //Persisting the new genre in the DB
     Genre save (Genre genre);
 
+    //Updating an genre in the DB
+    Optional<Genre> update(Long id, Genre genre);
+
     //Deleting a genre
-    void delete (Genre genre);
+    Optional<Genre> delete (Long id);
 }
