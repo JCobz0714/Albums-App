@@ -24,6 +24,7 @@ import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.PutMapping;
 
 
+
 //Creating the CRUD methods for album entity
 @RestController
 @RequestMapping("/albums")
@@ -52,6 +53,21 @@ public class AlbumController {
         //Return a not found error
         return ResponseEntity.notFound().build();
     }
+
+    //Get method to search an album by its genre ID
+    @GetMapping("/genre/{genreId}")
+    public ResponseEntity<List<Album>> viewGenre(@PathVariable Long genreId) {
+        List<Album> albumsGenre = service.findAlbumsByGenre(genreId);
+
+        //Checking if any album with that genre is found
+        if(albumsGenre.isEmpty()){
+            return ResponseEntity.notFound().build();
+        }
+
+        //Return the object with all the info
+        return ResponseEntity.ok(albumsGenre);
+    }
+    
 
     //Post method, creating a new album
     @PostMapping

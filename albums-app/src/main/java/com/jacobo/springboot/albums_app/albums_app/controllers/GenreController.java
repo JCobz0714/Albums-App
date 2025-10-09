@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 //Creating the CRUD methods for genre entity
 @RestController
-@RequestMapping("/albums/genre")
+@RequestMapping("/genre")
 public class GenreController {
     //Injecting the service as a dependency
     @Autowired

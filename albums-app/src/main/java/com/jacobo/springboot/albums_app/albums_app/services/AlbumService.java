@@ -13,7 +13,7 @@ public interface AlbumService {
     Optional<Album> findById(Long id);
 
     //Find an album regarding its genre
-    List<Album> findAlbumsByGenre(String genre);
+    List<Album> findAlbumsByGenre(Long genreId);
 
     //Persisting the new album in the DB
     Album save (Album album);

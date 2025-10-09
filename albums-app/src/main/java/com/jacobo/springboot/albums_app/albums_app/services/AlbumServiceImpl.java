@@ -41,8 +41,8 @@ public class AlbumServiceImpl implements AlbumService {
     //Finding albums using the genre
     @Transactional(readOnly = true)
     @Override
-    public List<Album> findAlbumsByGenre(String genre) {
-        return repository.findAlbumByGenre(genre);
+    public List<Album> findAlbumsByGenre(Long genreId) {
+        return repository.findAlbumByGenre(genreId);
     }
 
     //Persisting the data in the DB using the injected repository object
